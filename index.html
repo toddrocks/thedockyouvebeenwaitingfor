@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dock You've Been Waiting For — 4658 County Highway 83A W, Freeport FL</title>
+<meta name="description" content="Roughly 130 feet of south-facing Choctawhatchee Bay frontage, a 120-foot deepwater dock with boat lift and sundeck, on a level 0.9-acre lot. No HOA. Owner financing available. Offered by Todd Siegrist.">
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="The Dock You've Been Waiting For — Freeport, FL Waterfront">
+<meta property="og:description" content="~130 ft of south-facing bay frontage. 120-ft deepwater dock, boat lift, sundeck. 0.9 acre, no HOA. Owner financing available.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.thedockyouvebeenwaitingfor.com">
+<meta property="og:image" content="assets/hero-aerial-sunset.jpg">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<!-- Fonts: Newsreader (display) · IBM Plex Sans (body) · IBM Plex Mono (data) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Core palette — dark base, brand blue accent */
+    --ink:#0B0C0E;
+    --ink-2:#0E1621;
+    --ink-3:#152232;
+    --paper:#ECE7DC;
+    --paper-dim:rgba(236,231,220,.74);
+    --paper-faint:rgba(236,231,220,.52);
+    --line:rgba(236,231,220,.16);
+    --accent:#0099FF;      /* water / brand blue */
+    --accent-soft:rgba(0,153,255,.16);
+    --panel:rgba(130,175,225,.05);
+
+    --display:"Newsreader",Georgia,serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+    --wrap:1200px;
+    --gutter:clamp(20px,5vw,64px);
+    --section-y:clamp(72px,11vw,140px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:linear-gradient(180deg,#0A0B0D 0%,#0A1220 55%,#0A1B2E 100%);
+    background-attachment:fixed;
+    color:var(--paper);
+    font-family:var(--body);
+    font-weight:300;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+
+  /* Accessible focus */
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+
+  /* ---------- Shared type ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.8rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:500;
+  }
+  .eyebrow.gold{color:var(--accent)}
+  .display{
+    font-family:var(--display);
+    font-weight:500;
+    line-height:1.02;
+    letter-spacing:-.015em;
+  }
+  h2.display{font-size:clamp(2rem,5.2vw,3.6rem)}
+  .lead{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(1.4rem,2.6vw,1.85rem);
+    line-height:1.42;
+    color:var(--paper);
+  }
+  .lead em{font-style:italic;color:var(--accent)}
+  p.body{color:var(--paper-dim);font-size:1.12rem;line-height:1.65;max-width:62ch}
+  p.body + p.body{margin-top:1.1em}
+
+  /* Signature: the horizon rule — a hairline waterline that recurs */
+  .horizon{
+    height:1px;border:0;
+    background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
+    margin:0;
+  }
+  .horizon-accent{
+    display:flex;align-items:center;gap:14px;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--paper-faint);
+  }
+  .horizon-accent::before,.horizon-accent::after{
+    content:"";height:1px;flex:1;
+    background:linear-gradient(90deg,transparent,var(--line),transparent);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+    font-family:var(--body);font-weight:500;font-size:.98rem;
+    padding:.95em 1.6em;border-radius:2px;border:1px solid transparent;
+    cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease;
+    letter-spacing:.01em;
+  }
+  .btn svg{width:1.05em;height:1.05em;flex:none}
+  .btn-primary{background:var(--accent);color:#00121f;font-weight:600}
+  .btn-primary:hover{transform:translateY(-2px);background:#33adff}
+  .btn-ghost{border-color:var(--line);color:var(--paper);background:transparent}
+  .btn-ghost:hover{border-color:var(--paper-dim);transform:translateY(-2px)}
+  .btn-gold{background:var(--accent);color:#00121f;font-weight:600}
+  .btn-gold:hover{transform:translateY(-2px);background:#33adff}
+  @media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px var(--gutter);
+    background:linear-gradient(180deg,rgba(10,11,13,.55),rgba(10,11,13,0));
+    backdrop-filter:blur(2px);
+    transition:background .3s ease,backdrop-filter .3s ease;
+  }
+  .topbar.solid{background:rgba(11,12,14,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar-brand{display:flex;align-items:center;gap:12px}
+  .topbar-brand img{height:30px;width:auto}
+  .topbar-brand .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--paper-faint);border-left:1px solid var(--line);padding-left:12px}
+  .topbar-call{display:inline-flex;align-items:center;gap:.5em;font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;color:var(--paper);padding:.5em .9em;border:1px solid var(--line);border-radius:2px;transition:border-color .2s ease}
+  .topbar-call:hover{border-color:var(--accent)}
+  .topbar-call svg{width:1em;height:1em;color:var(--accent)}
+  @media (max-width:640px){.topbar-brand .tag{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate}
+  .hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+  .hero-scrim{position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg,rgba(10,11,13,.30) 0%,rgba(10,11,13,0) 24%,rgba(10,11,13,.28) 58%,rgba(10,11,13,.97) 100%);
+  }
+  .hero-inner{width:100%;padding-bottom:clamp(72px,10vh,104px);padding-top:112px}
+  .hero h1{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(2.6rem,8vw,6rem);line-height:.98;letter-spacing:-.02em;
+    max-width:16ch;margin:.32em 0 .5em;
+    text-shadow:0 2px 40px rgba(0,0,0,.4);
+  }
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero-facts{
+    display:inline-flex;flex-wrap:wrap;
+    border:1px solid var(--line);border-radius:3px;overflow:hidden;
+    background:rgba(10,14,20,.44);backdrop-filter:blur(5px);
+    margin-bottom:1.9em;
+  }
+  .hf-address,.hf-price{padding:16px clamp(20px,3vw,28px);line-height:1.15}
+  .hf-address{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.6vw,1.9rem);color:var(--paper)}
+  .hf-price{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.6vw,1.9rem);color:var(--accent);border-left:1px solid var(--line)}
+  .hf-address span,.hf-price span{display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);margin-top:.55em;font-weight:400}
+  .hf-price span{letter-spacing:.06em;text-transform:none}
+  @media (max-width:560px){
+    .hero-facts{width:100%}
+    .hf-address,.hf-price{flex:1 1 100%}
+    .hf-price{border-left:0;border-top:1px solid var(--line)}
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+
+  /* Hero spec strip */
+  .specstrip{
+    border-top:1px solid var(--line);
+    margin-top:clamp(28px,5vh,52px);padding-top:20px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  .specstrip .spec .n{font-family:var(--display);font-size:clamp(1.4rem,3vw,2rem);font-weight:500;line-height:1}
+  .specstrip .spec .l{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);margin-top:.7em}
+
+  /* ---------- Lifestyle manifesto (near top) ---------- */
+  .manifesto{padding-block:clamp(56px,8vw,100px)}
+  .manifesto .wrap{max-width:1000px}
+  .manifesto-quote{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(1.6rem,3.7vw,2.6rem);line-height:1.26;letter-spacing:-.01em;
+    color:var(--paper);text-wrap:balance;
+  }
+  .manifesto-quote em{font-style:italic;color:var(--accent)}
+  .manifesto-quote::before{
+    content:"";display:block;width:56px;height:2px;background:var(--accent);
+    margin-bottom:clamp(24px,3vw,36px);
+  }
+  @media (max-width:640px){
+    .specstrip{grid-template-columns:repeat(2,1fr);gap:22px 18px}
+  }
+
+  /* ---------- Section scaffolding ---------- */
+  section{position:relative}
+  .band{padding-block:var(--section-y)}
+  .band-2{background:var(--panel)}
+  .sec-head{max-width:64ch}
+  .sec-head .eyebrow{display:block;margin-bottom:1.1em}
+  .sec-head h2{margin-bottom:.6em}
+
+  /* ---------- The Water ---------- */
+  .water-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:end}
+  @media (max-width:860px){.water-intro{grid-template-columns:1fr;gap:28px}}
+
+  .figure{position:relative;overflow:hidden;border-radius:3px;background:var(--ink-3)}
+  .figure img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .figure:hover img{transform:scale(1.03)}
+  @media (prefers-reduced-motion:reduce){.figure:hover img{transform:none}}
+  .figure .cap{
+    position:absolute;left:0;bottom:0;right:0;
+    padding:16px 18px;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);
+    background:linear-gradient(180deg,transparent,rgba(11,12,14,.82));
+  }
+
+  .water-showpiece{margin-top:clamp(28px,5vw,56px)}
+  .water-showpiece .figure{aspect-ratio:16/9}
+  @media (max-width:640px){.water-showpiece .figure{aspect-ratio:4/5}}
+
+  .water-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  .water-grid .figure{aspect-ratio:3/4}
+  @media (max-width:640px){.water-grid{grid-template-columns:1fr 1fr}.water-grid .figure:last-child{grid-column:1/-1;aspect-ratio:16/10}}
+
+  /* Water asset list */
+  .assets-list{margin-top:clamp(36px,6vw,64px);display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,5vw,64px)}
+  @media (max-width:720px){.assets-list{grid-template-columns:1fr}}
+  .asset-row{display:flex;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
+  .asset-row .k{font-family:var(--mono);font-size:.78rem;color:var(--accent);padding-top:.4em;min-width:2.2em;letter-spacing:.1em}
+  .asset-row h3{font-family:var(--display);font-weight:500;font-size:1.34rem;margin-bottom:.3em}
+  .asset-row p{color:var(--paper-dim);font-size:1.04rem;line-height:1.55;max-width:46ch}
+
+  /* ---------- Video blocks ---------- */
+  .video-block{margin-top:clamp(20px,4vw,40px)}
+  .video-h{position:relative;border-radius:4px;overflow:hidden;background:var(--ink-3);border:1px solid var(--line)}
+  .video-h .ratio{aspect-ratio:16/9}
+  .video-v-wrap{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+  @media (max-width:720px){.video-v-wrap{grid-template-columns:1fr;justify-items:center;text-align:center}}
+  .video-v{position:relative;border-radius:4px;overflow:hidden;background:var(--ink-3);border:1px solid var(--line);width:100%;max-width:320px}
+  .video-v .ratio{aspect-ratio:9/16}
+  .ratio{position:relative;display:block}
+  .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-poster{position:absolute;inset:0;overflow:hidden}
+  .video-poster img{width:100%;height:100%;object-fit:cover;opacity:.5}
+  .video-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,14,.2),rgba(11,12,14,.7))}
+  .video-badge{
+    position:absolute;z-index:2;left:0;right:0;bottom:0;
+    display:flex;align-items:center;gap:14px;padding:18px 20px;
+  }
+  .play-glyph{
+    width:52px;height:52px;border-radius:50%;flex:none;
+    display:grid;place-items:center;
+    background:var(--accent);color:#00121f;
+    box-shadow:0 8px 30px rgba(0,153,255,.35);
+  }
+  .play-glyph svg{width:20px;height:20px;margin-left:3px}
+  .video-badge .vt{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper)}
+  .video-badge .vt small{display:block;color:var(--paper-faint);letter-spacing:.1em;margin-top:.4em;font-size:.92em}
+
+  /* ---------- The View (interior) ---------- */
+  .view-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:clamp(28px,5vw,48px)}
+  .view-split .figure.tall{aspect-ratio:4/5}
+  @media (max-width:720px){.view-split{grid-template-columns:1fr}}
+
+  /* ---------- Owner financing ---------- */
+  .finance{background:var(--panel);position:relative;overflow:hidden}
+  .finance::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:radial-gradient(120% 90% at 85% 0%,var(--accent-soft),transparent 60%);
+    pointer-events:none;
+  }
+  .finance .wrap{position:relative;z-index:1}
+  .finance-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,80px);align-items:center}
+  @media (max-width:860px){.finance-grid{grid-template-columns:1fr;gap:36px}}
+  .finance h2{font-size:clamp(2.1rem,5.4vw,3.6rem)}
+  .finance h2 em{font-style:italic;color:var(--accent)}
+  .finance-points{border-top:1px solid var(--line);margin-top:28px}
+  .finance-points .fp{padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+  .finance-points .fp .num{font-family:var(--mono);color:var(--accent);font-size:.78rem;letter-spacing:.1em}
+  .finance-points .fp .txt{color:var(--paper-dim);font-size:1.06rem;line-height:1.5}
+  .finance-points .fp .txt strong{color:var(--paper);font-weight:500}
+  .finance-card{
+    background:var(--ink-3);border:1px solid var(--line);border-radius:4px;
+    padding:clamp(26px,4vw,38px);
+  }
+  .finance-card .eyebrow.gold{margin-bottom:1.4em;display:block}
+  .finance-card .big{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,6vw,3.2rem);line-height:1}
+  .finance-card .big .sub{display:block;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--paper-dim);margin-top:1em;text-transform:none;line-height:1.5;font-weight:400}
+  .finance-card .btn{margin-top:26px;width:100%}
+
+  /* ---------- Land & house ---------- */
+  .lot-hero{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:2/1;margin-bottom:clamp(28px,5vw,48px)}
+  @media (max-width:640px){.lot-hero{aspect-ratio:4/3}}
+  .lot-hero img{width:100%;height:100%;object-fit:cover}
+  .house-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+  @media (max-width:860px){.house-layout{grid-template-columns:1fr;gap:36px}}
+  .spec-table{border-top:1px solid var(--line)}
+  .spec-table .sr{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:1.04rem}
+  .spec-table .sr .sk{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--paper-faint)}
+  .spec-table .sr .sv{color:var(--paper);text-align:right}
+  .outbuildings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  .outbuildings .figure{aspect-ratio:4/3}
+  .outbuildings .figure .cap{font-size:.6rem}
+
+  /* ---------- Setting ---------- */
+  .setting{text-align:center}
+  .setting .wrap{max-width:820px}
+  .setting .lead{margin-inline:auto}
+  .setting-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(28px,6vw,72px);margin-top:clamp(36px,6vw,56px)}
+  .setting-stats .ss .n{font-family:var(--display);font-size:clamp(1.4rem,3.2vw,2rem);font-weight:500}
+  .setting-stats .ss .l{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);margin-top:.6em}
+
+  /* ---------- Meet Todd ---------- */
+  .agent{background:var(--panel)}
+  .agent-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:center}
+  @media (max-width:800px){.agent-grid{grid-template-columns:1fr;gap:32px}}
+  .agent-photo{position:relative;border-radius:4px;overflow:hidden;background:var(--ink-3);max-width:380px}
+  .agent-photo img{width:100%;height:100%;object-fit:cover}
+  .agent-photo .rock{position:absolute;left:16px;bottom:16px;height:34px;width:auto;opacity:.95}
+  .agent h2{font-size:clamp(2.2rem,5.5vw,3.4rem);margin-bottom:.1em}
+  .agent .role{font-family:var(--mono);font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4em}
+  .agent .tagline{font-family:var(--display);font-style:italic;font-size:1.45rem;color:var(--accent);margin-bottom:1em}
+  .agent-contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+  /* ---------- Seller pitch (audition for future clients) ---------- */
+  .seller{position:relative;overflow:hidden}
+  .seller::before{content:"";position:absolute;inset:0;background:radial-gradient(100% 80% at 10% 0%,var(--accent-soft),transparent 55%);pointer-events:none}
+  .seller .wrap{position:relative;z-index:1}
+  .seller-head{max-width:66ch;margin-bottom:clamp(40px,6vw,64px)}
+  .seller-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  @media (max-width:800px){.seller-grid{grid-template-columns:1fr}}
+  .scard{background:var(--ink);padding:clamp(24px,3.5vw,34px);min-height:180px;display:flex;flex-direction:column}
+  .scard .sn{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;color:var(--accent);margin-bottom:auto}
+  .scard h3{font-family:var(--display);font-weight:500;font-size:1.42rem;margin:26px 0 .4em}
+  .scard p{color:var(--paper-dim);font-size:1.02rem;line-height:1.55}
+  .seller-cta{margin-top:clamp(36px,5vw,52px);display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px;padding:clamp(24px,4vw,36px);background:var(--ink-3);border:1px solid var(--line);border-radius:4px}
+  .seller-cta .sctext{flex:1;min-width:260px}
+  .seller-cta h3{font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:.2em}
+  .seller-cta p{color:var(--paper-dim);font-size:1.04rem}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px)}
+  @media (max-width:800px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+  .contact-methods .cm{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .contact-methods .cm:first-child{border-top:1px solid var(--line)}
+  .contact-methods .cm .ico{width:44px;height:44px;flex:none;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--accent)}
+  .contact-methods .cm .ico svg{width:18px;height:18px}
+  .contact-methods .cm .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint)}
+  .contact-methods .cm .cv{font-family:var(--display);font-size:1.25rem;color:var(--paper)}
+  .contact-methods .cm a.cv:hover{color:var(--accent)}
+
+  .contact-actions{background:var(--ink-3);border:1px solid var(--line);border-radius:4px;padding:clamp(24px,4vw,34px);display:flex;flex-direction:column;gap:12px}
+  .contact-actions .ca-lead{font-family:var(--display);font-size:1.35rem;line-height:1.3;margin-bottom:8px;color:var(--paper)}
+  .contact-actions .btn{width:100%}
+  .contact-actions .ca-note{font-family:var(--mono);font-size:.72rem;color:var(--paper-faint);margin-top:10px;letter-spacing:.03em;line-height:1.8}
+  .mls-link{display:inline-flex;align-items:center;gap:.5em;margin-top:22px;font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:3px}
+  .mls-link:hover{border-color:var(--accent)}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--panel);border-top:1px solid var(--line);padding-block:clamp(48px,7vw,72px)}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+  .foot-brand img{height:34px;width:auto;margin-bottom:16px}
+  .foot-brand .tag{font-family:var(--display);font-style:italic;color:var(--accent);font-size:1.15rem}
+  .foot-broker{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .foot-broker img{height:40px;width:auto;opacity:.85}
+  .foot-broker .bmeta{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--paper-dim);line-height:1.9}
+  .foot-legal{margin-top:clamp(36px,5vw,52px);padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:.64rem;letter-spacing:.03em;color:var(--paper-faint);line-height:1.9;max-width:90ch}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:none;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);border-top:1px solid var(--line);
+  }
+  .callbar a{
+    display:flex;align-items:center;justify-content:center;gap:.5em;
+    padding:15px;font-family:var(--body);font-weight:600;font-size:.95rem;
+    background:var(--ink);color:var(--paper);
+  }
+  .callbar a.call{background:var(--accent);color:#00121f}
+  .callbar a svg{width:1.05em;height:1.05em}
+  @media (max-width:720px){
+    .callbar{display:grid}
+    body{padding-bottom:54px}
+  }
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar" id="topbar">
+  <a class="topbar-brand" href="#top" aria-label="The Dock You've Been Waiting For — home">
+    <img src="assets/toddrocks-logo-white.png" alt="Todd Rocks">
+    <span class="tag">Freeport · Choctawhatchee Bay</span>
+  </a>
+  <a class="topbar-call" href="tel:+18507970627">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    850-797-0627
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-label="Waterfront property introduction">
+  <div class="hero-media">
+    <img src="assets/hero-aerial-sunset.jpg" alt="Aerial view at sunset of the property on Choctawhatchee Bay, showing the brick home, level lawn, and long private dock reaching into open water" fetchpriority="high">
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner wrap">
+    <span class="eyebrow">The dock you've been waiting for</span>
+    <h1>Live <em>on</em> the water.<br>Not just near it.</h1>
+    <div class="hero-facts">
+      <div class="hf-address">4658 County Highway 83A&nbsp;W<span>Freeport, FL 32439</span></div>
+      <div class="hf-price">$1,000,000<span>Open to all reasonable offers</span></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+18507970627">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call or text Todd
+      </a>
+      <a class="btn btn-ghost" href="#water">See the dock ↓</a>
+    </div>
+
+    <div class="specstrip">
+      <div class="spec"><div class="n">~130 ft</div><div class="l">Bay frontage</div></div>
+      <div class="spec"><div class="n">120 ft</div><div class="l">Dock · deepwater</div></div>
+      <div class="spec"><div class="n">0.9 ac</div><div class="l">Level lot · no HOA</div></div>
+      <div class="spec"><div class="n">Due South</div><div class="l">Sunrise &amp; sunset</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIFESTYLE MANIFESTO ================= -->
+<section class="band manifesto" aria-label="The lifestyle here">
+  <div class="wrap reveal">
+    <p class="manifesto-quote">Some homes sell a lifestyle you'll never quite get around to. This is a place measured in fish caught, miles cruised, and <em>sunsets that ask nothing of you but to sit still and watch.</em></p>
+  </div>
+</section>
+
+<!-- ================= THE WATER ================= -->
+<section class="band band-2" id="water" aria-labelledby="water-h">
+  <div class="wrap">
+    <div class="water-intro reveal">
+      <div class="sec-head">
+        <span class="eyebrow">The waterfront</span>
+        <h2 class="display" id="water-h">There are two kinds of waterfront. This is the kind you live on.</h2>
+      </div>
+      <div>
+        <p class="body">Roughly 130 feet of the property's southern edge is Choctawhatchee Bay — open, deep, facing due south. That orientation is the whole game: sun on the water from morning to evening, with both the sunrise and the sunset playing out across the bay instead of behind a neighbor's roofline.</p>
+      </div>
+    </div>
+
+    <div class="water-showpiece reveal">
+      <figure class="figure">
+        <img src="assets/dock-to-sundeck.jpg" alt="The 120-foot private dock running straight out over open bay water to a covered sundeck platform">
+        <figcaption class="cap">120-ft dock · deepwater · sundeck at the end</figcaption>
+      </figure>
+    </div>
+
+    <div class="water-grid reveal">
+      <figure class="figure">
+        <img src="assets/dock-boatlift-detail.jpg" alt="Dock detail showing the boat lift with a boat raised over the water and stairs up to the sundeck">
+        <figcaption class="cap">Boat lift over usable depth</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/sundeck-view.jpg" alt="The open view across Choctawhatchee Bay from the dock's sundeck platform">
+        <figcaption class="cap">The view from the sundeck</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/shoreline-chairs.jpg" alt="Adirondack chairs at the shoreline looking out over the dock and open water">
+        <figcaption class="cap">Where the day slows down</figcaption>
+      </figure>
+    </div>
+
+    <div class="assets-list reveal">
+      <div class="asset-row">
+        <span class="k">01</span>
+        <div><h3>Deepwater, on your schedule</h3><p>The lift sits over water deep enough to actually use — no standing around waiting on the tide before you can go fishing.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">02</span>
+        <div><h3>Fish-cleaning station &amp; dockside shower</h3><p>Catch dinner, clean it, and rinse off the evidence without ever setting foot on dry land. Yes — a shower, on the dock.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">03</span>
+        <div><h3>Sundeck at the end of the run</h3><p>A covered platform out over the bay — the best seat on the property for weather coming across the water.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">04</span>
+        <div><h3>Seawall &amp; rip rap</h3><p>A vinyl seawall and rip rap hold the shoreline in place — the unromantic infrastructure that keeps waterfront homes from quietly becoming underwater ones.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">05</span>
+        <div><h3>Sunrise and sunset, both on the water</h3><p>The due-south exposure means the sky puts on two shows a day — and the bay hands both of them back in reflection.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">06</span>
+        <div><h3>Dolphins in the bay</h3><p>Choctawhatchee Bay's dolphins work this stretch of water. Some mornings the show simply comes to you.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">07</span>
+        <div><h3>Detached garage, workshop &amp; carport</h3><p>A detached 2-car garage, a separate storage building and workshop, plus a carport — room for every boat, trailer, and toy the water invites.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">08</span>
+        <div><h3>Nearly an acre, level</h3><p>0.9 of an acre of usable, level ground — rare on the water, with room to build, add, or simply spread out.</p></div>
+      </div>
+      <div class="asset-row">
+        <span class="k">09</span>
+        <div><h3>Freeport — and climbing</h3><p>One of the Emerald Coast's fastest-growing communities, minutes from 30A and the bay's best water — a location moving in the right direction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIDEO: WALKTHROUGH (16:9) ================= -->
+<section class="band" aria-labelledby="tour-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Full tour</span>
+      <h2 class="display" id="tour-h">Walk the property, end to end.</h2>
+    </div>
+    <div class="video-block reveal">
+      <!-- To publish: set data-yt to the YouTube video ID (the part after v=). Leave empty to show the poster. -->
+      <div class="video-h" data-video data-yt="" data-title="Property walkthrough">
+        <div class="ratio">
+          <div class="video-poster">
+            <img src="assets/aerial-sunrise-wide.jpg" alt="">
+          </div>
+          <div class="video-badge">
+            <span class="play-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt">Full walkthrough<small>Video coming soon</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE VIEW (interior) ================= -->
+<section class="band" aria-labelledby="view-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The view, from inside</span>
+      <h2 class="display" id="view-h">The house was built to look at one thing.</h2>
+      <p class="body" style="margin-top:1.2em">A family room pointed directly at the bay, wrapped in massive windows on three sides. When the water is the reason you're here, the best room in the house is the one that never lets you forget it.</p>
+    </div>
+    <div class="view-split reveal">
+      <figure class="figure tall">
+        <img src="assets/interior-windowwall.jpg" alt="Interior family room with a wall of windows framing the lawn, dock, and open bay beyond">
+        <figcaption class="cap">Family room · walls of glass on three sides</figcaption>
+      </figure>
+      <figure class="figure tall">
+        <img src="assets/interior-bedroom-bayview.jpg" alt="Bedroom with a sliding glass door opening to the brick exterior, lawn, and bay view">
+        <figcaption class="cap">Wake up to the water</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OWNER FINANCING ================= -->
+<section class="band finance" id="financing" aria-labelledby="fin-h">
+  <div class="wrap">
+    <div class="finance-grid">
+      <div class="reveal">
+        <span class="eyebrow gold">Owner financing available</span>
+        <h2 class="display" id="fin-h" style="margin-top:1em">Skip the bank. <em>Deal directly.</em></h2>
+        <p class="body" style="margin-top:1.2em">The seller is open to owner financing — and that's worth slowing down for. Instead of accepting whatever rate the bank is feeling that week, the terms here can be worked out directly.</p>
+        <div class="finance-points">
+          <div class="fp"><span class="num">01</span><span class="txt"><strong>Price, rate, down payment, and timeline</strong> — all negotiable, subject to the seller's approval.</span></div>
+          <div class="fp"><span class="num">02</span><span class="txt">For the right buyer: <strong>a faster close, fewer hoops,</strong> and a monthly number that actually pencils out.</span></div>
+          <div class="fp"><span class="num">03</span><span class="txt"><strong>Short-term rentals are permitted</strong> — a genuine income-producing property, not just a lovely place to stand.</span></div>
+        </div>
+      </div>
+      <div class="finance-card reveal">
+        <span class="eyebrow gold">Let's talk terms</span>
+        <div class="big">$1,000,000<span class="sub">Offered at one million — seller open to all reasonable offers. Financing structured directly with the seller.</span></div>
+        <a class="btn btn-gold" href="tel:+18507970627">Call Todd about terms</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIDEO: HIGHLIGHT REEL (9:16) ================= -->
+<section class="band band-2" aria-labelledby="reel-h">
+  <div class="wrap">
+    <div class="video-v-wrap">
+      <div class="video-v reveal" data-video data-yt="" data-title="Property highlight reel">
+        <div class="ratio">
+          <div class="video-poster">
+            <img src="assets/dock-from-water.jpg" alt="">
+          </div>
+          <div class="video-badge">
+            <span class="play-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt">Reel<small>Coming soon</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="sec-head reveal">
+        <span class="eyebrow">Sixty-second reel</span>
+        <h2 class="display" id="reel-h">The highlight reel.</h2>
+        <p class="body" style="margin-top:1.2em">A fast, vertical tour built for the way people actually watch — dock, water, sunset, done. Coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAND & HOUSE ================= -->
+<section class="band" id="property" aria-labelledby="land-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The land &amp; the house</span>
+      <h2 class="display" id="land-h">Nearly an acre, level, and honest about what it is.</h2>
+    </div>
+
+    <figure class="lot-hero reveal" style="margin-top:clamp(28px,5vw,48px)">
+      <img src="assets/lot-wide-oaks.jpg" alt="Wide view of the level 0.9-acre lot under mature oaks, with the brick ranch home and detached garage">
+    </figure>
+
+    <div class="house-layout">
+      <div class="reveal">
+        <p class="body">The home is a solid all-brick ranch — aged gracefully and updated where it counts, with vaulted ceilings and a brick fireplace. It won't win a magazine cover, and it doesn't need to: it's clean, comfortable, and move-in ready, on a lot that's the real prize.</p>
+        <p class="body">For everything that refuses to live indoors — boats, kayaks, and the water toys that multiply once you live somewhere like this — there's a carport, a detached 2-car garage, and a separate storage building and workshop.</p>
+        <div class="outbuildings">
+          <figure class="figure">
+            <img src="assets/garage-detached.jpg" alt="Detached two-car garage with a boat parked inside">
+            <figcaption class="cap">Detached 2-car garage</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/workshop-storage.jpg" alt="Separate storage building and workshop on the property">
+            <figcaption class="cap">Workshop &amp; storage</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="spec-table">
+          <div class="sr"><span class="sk">Lot</span><span class="sv">0.9 acre · level</span></div>
+          <div class="sr"><span class="sk">HOA</span><span class="sv">None</span></div>
+          <div class="sr"><span class="sk">Roof</span><span class="sv">Metal (2005)</span></div>
+          <div class="sr"><span class="sk">HVAC</span><span class="sv">Interior &amp; exterior units (2020)</span></div>
+          <div class="sr"><span class="sk">Water heater</span><span class="sv">Electric (2022)</span></div>
+          <div class="sr"><span class="sk">Plumbing</span><span class="sv">Copper</span></div>
+          <div class="sr"><span class="sk">Water</span><span class="sv">Public — City of Freeport</span></div>
+          <div class="sr"><span class="sk">Waste</span><span class="sv">Septic</span></div>
+          <div class="sr"><span class="sk">Storm</span><span class="sv">Hurricane shutters</span></div>
+          <div class="sr"><span class="sk">Security</span><span class="sv">Exterior camera system</span></div>
+          <div class="sr"><span class="sk">Internet</span><span class="sv">Cox (fiber coming)</span></div>
+          <div class="sr"><span class="sk">Use</span><span class="sv">Residential · short-term rentals OK</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SETTING ================= -->
+<section class="band band-2 setting" aria-labelledby="set-h">
+  <div class="wrap reveal">
+    <span class="eyebrow">Freeport · Emerald Coast</span>
+    <p class="lead" style="margin-top:1.4em">Peace and quiet come standard here. The only real risk is <em>forgetting what day it is.</em></p>
+    <div class="setting-stats">
+      <div class="ss"><div class="n">No HOA</div><div class="l">No letters about your mailbox</div></div>
+      <div class="ss"><div class="n">STR-legal</div><div class="l">Income-producing</div></div>
+      <div class="ss"><div class="n">Due South</div><div class="l">Sunrise &amp; sunset on the water</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEET TODD ================= -->
+<section class="band agent" id="agent" aria-labelledby="todd-h">
+  <div class="wrap">
+    <div class="agent-grid">
+      <div class="agent-photo reveal">
+        <img src="assets/todd-headshot-pro.jpg" alt="Todd Siegrist, Real Estate Strategist">
+        <img class="rock" src="assets/toddrocks-logo-white.png" alt="">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Listed &amp; marketed by</span>
+        <h2 class="display" id="todd-h" style="margin-top:.6em">Todd Siegrist</h2>
+        <div class="role">Real Estate Strategist</div>
+        <p class="tagline">Todd Rocks.</p>
+        <p class="body">This listing is mine, start to finish — the strategy, the media, the marketing, and the person who picks up when you call. I sell the Emerald Coast the way it deserves to be sold: with real photography, real video, and a plan built around the property's actual strengths. For this one, that means the water gets top billing and the conversation stays direct.</p>
+        <div class="agent-contact">
+          <a class="btn btn-primary" href="tel:+18507970627">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call or text
+          </a>
+          <a class="btn btn-ghost" href="#contact">Request a showing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SELLER PITCH ================= -->
+<section class="band seller" aria-labelledby="sell-h">
+  <div class="wrap">
+    <div class="seller-head reveal">
+      <span class="eyebrow">Thinking of selling?</span>
+      <h2 class="display" id="sell-h" style="margin-top:1em">This page is the pitch.</h2>
+      <p class="body" style="margin-top:1.2em">The site you're on right now isn't a template a portal handed me — it's how I market every listing. If this is what a bay-front ranch gets, imagine what your property gets.</p>
+    </div>
+
+    <div class="seller-grid reveal">
+      <div class="scard">
+        <span class="sn">01</span>
+        <h3>A property, its own website</h3>
+        <p>A dedicated domain and custom landing page built around one home's strengths — not a listing lost on page nine of a portal.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">02</span>
+        <h3>Media that sells</h3>
+        <p>Professional stills, drone aerials, a full walkthrough, and a vertical highlight reel — the media buyers actually stop to watch.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">03</span>
+        <h3>Reach where buyers are</h3>
+        <p>Roadside signage with scannable QR, social-native video, and search-ready pages that turn a drive-by into a phone call.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">04</span>
+        <h3>Strategy over guesswork</h3>
+        <p>Every listing gets a plan: what leads, what's honest, what closes. The dock leads here because the dock is the story.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">05</span>
+        <h3>One point of contact</h3>
+        <p>You work with me — not a rotating cast. The strategist and the marketer are the same person, and they answer the phone.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">06</span>
+        <h3>Terms, handled</h3>
+        <p>Owner financing, short-term-rental positioning, income framing — the creative structuring that widens your buyer pool.</p>
+      </div>
+    </div>
+
+    <div class="seller-cta reveal">
+      <div class="sctext">
+        <h3>Want this for your listing?</h3>
+        <p>Let's talk about what your property is really worth — and how to market it so buyers see it.</p>
+      </div>
+      <a class="btn btn-primary" href="tel:+18507970627">Call Todd · 850-797-0627</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="band band-2" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:clamp(36px,5vw,52px)">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="display" id="contact-h">Call, text, or send a note.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-methods reveal">
+        <div class="cm">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><div class="cl">Call or text</div><a class="cv" href="tel:+18507970627">850-797-0627</a></div>
+        </div>
+        <div class="cm">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></span>
+          <!-- EMAIL: replace todd@thedockyouvebeenwaitingfor.com below (2 places: href and the visible text) with your real address. -->
+          <div><div class="cl">Email</div><a class="cv" style="font-size:1.05rem" href="mailto:todd@thedockyouvebeenwaitingfor.com?subject=Inquiry%20%E2%80%94%204658%20County%20Highway%2083A%20W&body=Hi%20Todd%2C%20I%27d%20like%20more%20information%20about%20the%20Freeport%20waterfront%20listing.">todd@thedockyouvebeenwaitingfor.com</a></div>
+        </div>
+        <div class="cm">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="cl">Property address</div><span class="cv" style="font-size:1.05rem">4658 County Highway 83A W, Freeport, FL 32439</span></div>
+        </div>
+        <a class="mls-link" href="https://www.flexmls.com/share/EHMI9/4658-W-County-Highway-83A-Freeport-FL-32439" target="_blank" rel="noopener">
+          View the full MLS listing →
+        </a>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-actions">
+          <p class="ca-lead">Reach Todd directly — no forms, no waiting.</p>
+          <a class="btn btn-primary" href="sms:+18507970627">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text Todd
+          </a>
+          <a class="btn btn-ghost" href="tel:+18507970627">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Todd
+          </a>
+          <a class="btn btn-ghost" href="mailto:todd@thedockyouvebeenwaitingfor.com?subject=Inquiry%20%E2%80%94%204658%20County%20Highway%2083A%20W&body=Hi%20Todd%2C%20I%27d%20like%20more%20information%20about%20the%20Freeport%20waterfront%20listing.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+            Email Todd
+          </a>
+          <p class="ca-note">Todd Siegrist · Real Estate Strategist · Dalton Wade Real Estate Group</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/toddrocks-logo-white.png" alt="Todd Rocks">
+        <div class="tag">Todd Rocks.</div>
+      </div>
+      <div class="foot-broker">
+        <img src="assets/daltonwade-logo-white.png" alt="Dalton Wade Real Estate Group">
+        <div class="bmeta">
+          Todd Siegrist · Real Estate Strategist<br>
+          Broker of record: Dalton Wade Real Estate Group<br>
+          850-797-0627 · thedockyouvebeenwaitingfor.com
+        </div>
+      </div>
+    </div>
+    <p class="foot-legal">
+      All information is deemed reliable but not guaranteed and should be independently verified. Square footage, lot size, systems, dates, and dimensions are approximate. Water frontage and dock dimensions are approximate. Owner financing terms are negotiable and subject to seller approval. Short-term rental permissions are subject to current local ordinances and should be verified by the buyer. This is not an offer of credit. Equal Housing Opportunity. © 2026 Todd Siegrist · Dalton Wade Real Estate Group.
+    </p>
+  </div>
+</footer>
+
+<!-- ================= STICKY MOBILE CALL BAR ================= -->
+<nav class="callbar" aria-label="Quick contact">
+  <a class="call" href="tel:+18507970627">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a href="sms:+18507970627">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Text
+  </a>
+</nav>
+
+<script>
+  // Top bar solidifies after hero
+  const topbar=document.getElementById('topbar');
+  const onScroll=()=>{topbar.classList.toggle('solid',window.scrollY>window.innerHeight*0.7)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Scroll reveal
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Video placeholders → live embeds.
+  // To publish a video: set data-yt="YOUTUBE_ID" on the .video-h or .video-v element. That's the only change needed.
+  document.querySelectorAll('[data-video]').forEach(box=>{
+    const id=box.getAttribute('data-yt');
+    if(id && id.trim()){
+      const title=box.getAttribute('data-title')||'Property video';
+      const ratio=box.querySelector('.ratio');
+      ratio.innerHTML='<iframe src="https://www.youtube.com/embed/'+id.trim()+'" title="'+title+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+    }
+  });
+</script>
+
+</body>
+</html>
