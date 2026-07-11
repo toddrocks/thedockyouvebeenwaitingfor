@@ -8,21 +8,18 @@ Single self-contained page: `index.html` + `assets/`. Upload both, as-is, to you
 
 ---
 
-## The 2 things to finish before/after launch
+## To finish before/after launch
 
-### 1. Set your email address (30 seconds)
-The contact section uses direct **Call / Text / Email** links — no web form to manage. Call and text already work. For email, replace the placeholder with your real address:
-- In `index.html`, do a **find-and-replace-all**: change every `todd@thedockyouvebeenwaitingfor.com` (it appears three times — the visible link, plus two `mailto:` buttons) to the address you want inquiries sent to.
-- Prefer to skip email entirely? Delete the two email blocks and leave Call + Text.
+### Email — already set
+The contact section uses direct **Call / Text / Email** links — no web form to manage. Email is wired to **todd@toddrocks.com**. To change it, find-and-replace all instances of `todd@toddrocks.com` in `index.html`.
 
-### 2. Add the videos when they're ready (one line each)
-Both video slots show a styled poster now and become live YouTube embeds the moment you add an ID. No other change needed.
-- **Walkthrough (horizontal 16:9):** find `data-yt=""` on the `video-h` block, put the YouTube video ID inside the quotes → `data-yt="dQw4w9WgXcQ"`.
-- **Highlight reel (vertical 9:16):** same, on the `video-v` block.
+### Video — removed for now
+The walkthrough and highlight-reel sections were removed at your request; they can be added back as auto-embedding YouTube slots when your videos are ready.
 
-The ID is the part of a YouTube URL after `v=` (or after `youtu.be/`).
+### Headshot
+The agent photo uses `assets/todd-headshot-pro.jpg` (currently `Headshot_square.jpg` from your brand kit). To use a different one, drop your preferred image into `assets/` under that exact filename.
 
-### 3. MLS link — already wired
+### MLS link — already wired
 "View the full MLS listing" points to your flexmls share URL. No action needed unless the link changes.
 
 ---
@@ -32,12 +29,11 @@ Every image lives in `assets/` with a plain-English name. To replace one, drop i
 
 | Slot filename | Where it appears | Current photo |
 |---|---|---|
-| `hero-aerial-sunset.jpg` | Full-screen hero | Golden-hour aerial: house, lawn, dock, bay |
+| `hero-aerial-sunset.jpg` | Hero background + full establishing shot below it | Golden-hour aerial: house, lawn, dock, bay |
 | `dock-to-sundeck.jpg` | The Water — showpiece | Dock running out to the sundeck |
 | `dock-boatlift-detail.jpg` | The Water — grid | Boat lift + stairs detail |
 | `sundeck-view.jpg` | The Water — grid | View across bay from sundeck |
 | `shoreline-chairs.jpg` | The Water — grid | Adirondack chairs at the shoreline |
-| `aerial-sunrise-wide.jpg` | Walkthrough video poster | Wide misty sunrise aerial |
 | `interior-windowwall.jpg` | The View | Family room window-wall |
 | `interior-bedroom-bayview.jpg` | The View | Bedroom slider to bay |
 | `dock-from-water.jpg` | Reel video poster | Dock from the water |
