@@ -17,7 +17,7 @@ The contact section uses direct **Call / Text / Email** links — no web form to
 The walkthrough and highlight-reel sections were removed at your request; they can be added back as auto-embedding YouTube slots when your videos are ready.
 
 ### Headshot
-The agent photo uses `assets/todd-headshot-pro.jpg` (currently `Headshot_square.jpg` from your brand kit). To use a different one, drop your preferred image into `assets/` under that exact filename.
+The agent photo uses `assets/todd-headshot-pro.jpg` (currently `Todd_Siegrist_Headshot_2026.jpg`). To use a different one, drop your preferred image into `assets/` under that exact filename.
 
 ### MLS link — already wired
 "View the full MLS listing" points to your flexmls share URL. No action needed unless the link changes.
@@ -34,6 +34,10 @@ Every image lives in `assets/` with a plain-English name. To replace one, drop i
 | `dock-boatlift-detail.jpg` | The Water — grid | Boat lift + stairs detail |
 | `sundeck-view.jpg` | The Water — grid | View across bay from sundeck |
 | `shoreline-chairs.jpg` | The Water — grid | Adirondack chairs at the shoreline |
+| `aerial-sunset-dock.jpg` | The Water — 2nd showpiece | Dusk aerial of dock + sundeck |
+| `aerial-topdown-lot.jpg` | Land & House — parcel overview | Straight-down drone of the whole lot |
+| `lifestyle-redfish.jpg` / `lifestyle-trout.jpg` | Life on the Water | Seller catches (redfish, trout) |
+| `lifestyle-sunset.jpg` / `lifestyle-dusk.jpg` / `lifestyle-goldenhour.jpg` | Life on the Water | Seller sunset/dusk shots |
 | `interior-windowwall.jpg` | The View | Family room window-wall |
 | `interior-bedroom-bayview.jpg` | The View | Bedroom slider to bay |
 | `dock-from-water.jpg` | Reel video poster | Dock from the water |
