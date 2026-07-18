@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Dock You've Been Waiting For — 4658 County Highway 83A W, Freeport FL</title>
-<meta name="description" content="Roughly 130 feet of south-facing Choctawhatchee Bay frontage, a 120-foot deepwater dock with boat lift and sundeck, on a level 0.9-acre lot. No HOA. Owner financing available. Offered by Todd Siegrist.">
+<meta name="description" content="Roughly 130 feet of south-facing Choctawhatchee Bay frontage, a 120-foot dock with boat lift and sundeck, on a level 0.9-acre lot. No HOA. Owner financing available. Offered by Todd Siegrist.">
 
 <!-- Open Graph / social preview -->
 <meta property="og:title" content="The Dock You've Been Waiting For — Freeport, FL Waterfront">
-<meta property="og:description" content="~130 ft of south-facing bay frontage. 120-ft deepwater dock, boat lift, sundeck. 0.9 acre, no HOA. Owner financing available.">
+<meta property="og:description" content="~130 ft of south-facing bay frontage. 120-ft dock, boat lift, sundeck. 0.9 acre, no HOA. Owner financing available.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.thedockyouvebeenwaitingfor.com">
 <meta property="og:image" content="assets/hero-aerial-sunset.jpg">
@@ -48,7 +48,7 @@
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
   body{
-    background:linear-gradient(180deg,#0A0B0D 0%,#0A1220 55%,#0A1B2E 100%) no-repeat;
+    background:linear-gradient(90deg,#08090B 0%,#0A1524 18%,#0B2338 38%,#0A1524 58%,#0B2036 78%,#08090B 100%) no-repeat;
     background-size:100% 100%;
     color:var(--paper);
     font-family:var(--body);
@@ -149,44 +149,93 @@
   .topbar-call svg{width:1em;height:1em;color:var(--accent)}
   @media (max-width:640px){.topbar-brand .tag{display:none}}
 
-  /* ---------- Hero ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate}
-  .hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
-  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
-  .hero-scrim{position:absolute;inset:0;z-index:-1;
-    background:
-      linear-gradient(90deg,rgba(6,9,13,.92) 0%,rgba(6,9,13,.72) 34%,rgba(6,9,13,.30) 62%,rgba(6,9,13,.04) 85%),
-      linear-gradient(180deg,rgba(6,9,13,.55) 0%,rgba(6,9,13,.18) 26%,rgba(6,9,13,.28) 55%,rgba(6,9,13,.94) 100%);
+  /* ---------- Hero (headline + photo share the first view) ---------- */
+  .hero{position:relative;isolation:isolate;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(90% 55% at 88% 10%, rgba(0,153,255,.14), transparent 62%);
   }
-  .hero-inner{width:100%;padding-bottom:clamp(72px,10vh,104px);padding-top:112px}
-  @media (max-width:640px){
-    .hero-scrim{background:linear-gradient(180deg,rgba(6,9,13,.6) 0%,rgba(6,9,13,.34) 28%,rgba(6,9,13,.46) 58%,rgba(6,9,13,.96) 100%)}
+  .hero-top{
+    padding-top:clamp(84px,10.5vh,112px);
+    padding-bottom:clamp(18px,2.4vh,28px);
   }
   .hero h1{
     font-family:var(--display);font-weight:500;
-    font-size:clamp(2.6rem,8vw,6rem);line-height:.98;letter-spacing:-.02em;
-    max-width:16ch;margin:.32em 0 .5em;
-    text-shadow:0 2px 40px rgba(0,0,0,.4);
+    font-size:clamp(2.3rem,5.9vw,4.5rem);line-height:1.02;letter-spacing:-.022em;
+    max-width:16ch;margin:.26em 0 .26em;
   }
   .hero h1 em{font-style:italic;color:var(--accent)}
   .hero .eyebrow{font-size:.95rem;letter-spacing:.3em}
+  .hero-sub{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(1.08rem,1.7vw,1.32rem);line-height:1.4;
+    color:var(--paper-dim);max-width:40ch;
+  }
+
+  /* Hero photo — full page width, full image, never cropped */
+  .hero-figure{
+    position:relative;line-height:0;margin:0;width:100%;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .hero-figure > a{display:block;line-height:0}
+  .hero-figure img{width:100%;height:auto;display:block}
+  .hero-figure .cap{
+    position:absolute;left:0;right:0;bottom:0;line-height:1.5;
+    padding:clamp(26px,4vw,40px) var(--gutter) clamp(12px,2vw,18px);
+    font-family:var(--mono);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+    text-shadow:0 1px 8px rgba(0,0,0,.55);
+    background:linear-gradient(180deg,transparent,rgba(4,7,11,.55) 45%,rgba(4,7,11,.9));
+  }
+  .hero-bottom{padding-top:clamp(34px,5vw,56px);padding-bottom:clamp(52px,7vw,84px)}
+
+  /* Address + price: the statement block */
   .hero-facts{
-    display:inline-flex;flex-wrap:wrap;
-    border:1px solid var(--line);border-radius:3px;overflow:hidden;
-    background:rgba(10,14,20,.44);backdrop-filter:blur(5px);
-    margin-bottom:1.9em;
+    display:flex;flex-wrap:wrap;align-items:stretch;
+    gap:clamp(24px,4vw,56px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding-block:clamp(24px,3.2vw,34px);
+    margin-bottom:clamp(30px,4vw,42px);
   }
-  .hf-address,.hf-price{padding:16px clamp(20px,3vw,28px);line-height:1.15}
-  .hf-address{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.6vw,1.9rem);color:var(--paper)}
-  .hf-price{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.6vw,1.9rem);color:var(--accent);border-left:1px solid var(--line)}
-  .hf-address span,.hf-price span{display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);margin-top:.55em;font-weight:400}
-  .hf-price span{letter-spacing:.06em;text-transform:none}
-  @media (max-width:560px){
-    .hero-facts{width:100%}
-    .hf-address,.hf-price{flex:1 1 100%}
-    .hf-price{border-left:0;border-top:1px solid var(--line)}
+  .hf-block{display:flex;flex-direction:column;justify-content:center;min-width:0}
+  .hf-priceblock{
+    margin-left:auto;text-align:right;
+    padding-left:clamp(24px,4vw,56px);
+    border-left:1px solid var(--line);
   }
+  .hf-label{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:.9em;
+  }
+  .hf-address{font-family:var(--display);font-weight:500;font-size:clamp(1.45rem,2.7vw,2.1rem);line-height:1.15;color:var(--paper)}
+  .hf-city{font-family:var(--mono);font-size:.86rem;letter-spacing:.1em;color:var(--paper-dim);margin-top:.7em}
+  .hf-price{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(2.6rem,6.2vw,4.6rem);line-height:.95;letter-spacing:-.02em;
+    color:var(--paper);
+  }
+  .hf-note{font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;color:var(--accent);margin-top:.9em;line-height:1.6}
+  @media (max-width:760px){
+    .hero-facts{flex-direction:column;gap:0;padding-block:0;border:0}
+    .hf-block{padding-block:22px;border-bottom:1px solid var(--line)}
+    .hf-block:first-child{border-top:1px solid var(--line)}
+    .hf-priceblock{margin-left:0;text-align:left;padding-left:0;border-left:0}
+  }
+
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  @media (max-width:560px){
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{width:100%}
+  }
+
+  .scroll-cue{
+    display:inline-flex;align-items:center;gap:.8em;margin-top:clamp(36px,6vh,60px);
+    font-family:var(--mono);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--paper-faint);transition:color .2s ease;align-self:flex-start;
+  }
+  .scroll-cue:hover{color:var(--accent)}
+  .scroll-cue svg{width:1.15em;height:1.15em;animation:nudge 2.4s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+  @media (prefers-reduced-motion:reduce){.scroll-cue svg{animation:none}}
 
   /* Hero spec strip */
   .specstrip{
@@ -194,7 +243,7 @@
     margin-top:clamp(28px,5vh,52px);padding-top:20px;
     display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
   }
-  .specstrip .spec .n{font-family:var(--display);font-size:clamp(1.4rem,3vw,2rem);font-weight:500;line-height:1}
+  .specstrip .spec .n{font-family:var(--display);font-size:clamp(1.35rem,3vw,2rem);font-weight:500;line-height:1.05}
   .specstrip .spec .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);margin-top:.7em}
 
   /* ---------- Lifestyle manifesto (near top) ---------- */
@@ -213,6 +262,7 @@
 
   /* ---------- Full establishing shot (uncropped) ---------- */
   .fullshot{position:relative;width:100%;line-height:0}
+  .fullshot > a{display:block;line-height:0}
   .fullshot img{width:100%;height:auto;display:block}
   .fullshot-cap{
     position:absolute;left:0;right:0;bottom:0;line-height:1.5;
@@ -239,9 +289,20 @@
   @media (max-width:860px){.water-intro{grid-template-columns:1fr;gap:28px}}
 
   .figure{position:relative;overflow:hidden;border-radius:3px;background:var(--ink-3)}
+  .figure > a{display:block;width:100%;height:100%;line-height:0}
   .figure img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
   .figure:hover img{transform:scale(1.03)}
   @media (prefers-reduced-motion:reduce){.figure:hover img{transform:none}}
+  /* Click-to-enlarge affordance */
+  .figure > a::after{
+    content:"⤢";
+    position:absolute;top:12px;right:12px;z-index:2;
+    width:32px;height:32px;display:grid;place-items:center;
+    font-size:.9rem;line-height:1;color:#fff;
+    background:rgba(4,7,11,.62);border:1px solid rgba(236,231,220,.22);border-radius:2px;
+    opacity:0;transition:opacity .25s ease;
+  }
+  .figure:hover > a::after,.figure > a:focus-visible::after{opacity:1}
   .figure .cap{
     position:absolute;left:0;bottom:0;right:0;
     padding:26px 18px 15px;
@@ -258,6 +319,7 @@
   .life-grid{columns:3;column-gap:14px;margin-top:clamp(28px,5vw,48px)}
   .life-grid .figure{break-inside:avoid;margin-bottom:14px;display:block}
   .life-grid .figure img{width:100%;height:auto}
+  .life-grid .figure > a{height:auto}
   @media (max-width:820px){.life-grid{columns:2}}
   @media (max-width:480px){.life-grid{columns:1}}
 
@@ -276,6 +338,9 @@
   /* ---------- The View (interior) ---------- */
   .view-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:clamp(28px,5vw,48px)}
   .view-split .figure.tall{aspect-ratio:4/5}
+  .view-split .figure.wide{aspect-ratio:16/10}
+  /* Bedroom: pull framing right so the slider/water edge stays in view */
+  .figure img.frame-right{object-position:right center}
   @media (max-width:720px){.view-split{grid-template-columns:1fr}}
 
   /* ---------- Owner financing ---------- */
@@ -304,8 +369,33 @@
   .finance-card .big .sub{display:block;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--paper-dim);margin-top:1em;text-transform:none;line-height:1.5;font-weight:400}
   .finance-card .btn{margin-top:26px;width:100%}
 
+  /* ---------- Cost of ownership ---------- */
+  .costs{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start;
+    margin-top:clamp(36px,5vw,60px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line);
+  }
+  @media (max-width:820px){.costs{grid-template-columns:1fr;gap:30px}}
+  .costs-table{border-top:1px solid var(--line)}
+  .cr{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .cr .ck{color:var(--paper-dim);font-size:1.08rem}
+  .cr .cv{font-family:var(--mono);font-size:1rem;color:var(--paper);white-space:nowrap}
+  .costs-note{font-family:var(--mono);font-size:.74rem;letter-spacing:.02em;color:var(--paper-faint);line-height:1.8;margin-top:16px}
+
+  /* ---------- Comps teaser ---------- */
+  .comps-teaser{
+    display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(28px,5vw,64px);align-items:center;
+    border:1px solid var(--line);border-radius:4px;background:rgba(0,153,255,.06);
+    padding:clamp(26px,4vw,48px);
+  }
+  @media (max-width:860px){.comps-teaser{grid-template-columns:1fr;gap:32px}}
+  .ct-stats{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .cts{background:#0A121C;padding:20px clamp(18px,2.4vw,26px)}
+  .cts .n{display:block;font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1;color:var(--accent)}
+  .cts .l{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-faint);margin-top:.85em}
+
   /* ---------- Land & house ---------- */
   .lot-hero{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:2/1;margin-bottom:clamp(28px,5vw,48px)}
+  .lot-hero > a{display:block;width:100%;height:100%;line-height:0}
   @media (max-width:640px){.lot-hero{aspect-ratio:4/3}}
   .lot-hero img{width:100%;height:100%;object-fit:cover}
   .house-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
@@ -328,14 +418,15 @@
 
   /* ---------- Meet Todd ---------- */
   .agent{background:var(--panel)}
-  .agent-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .agent-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
   @media (max-width:800px){.agent-grid{grid-template-columns:1fr;gap:32px}}
-  .agent-photo{position:relative;border-radius:4px;overflow:hidden;background:var(--ink-3);max-width:380px}
-  .agent-photo img{width:100%;height:100%;object-fit:cover}
+  .agent-photo{position:relative;border-radius:4px;overflow:hidden;background:var(--ink-3);width:100%;aspect-ratio:4/5;border:1px solid var(--line)}
+  .agent-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+  @media (max-width:800px){.agent-photo{margin-inline:auto;max-width:420px;aspect-ratio:4/5}}
   .agent-photo .rock{position:absolute;left:16px;bottom:16px;height:34px;width:auto;opacity:.95}
   .agent h2{font-size:clamp(2.2rem,5.5vw,3.4rem);margin-bottom:.1em}
   .agent .role{font-family:var(--mono);font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4em}
-  .agent .tagline{font-family:var(--display);font-style:italic;font-size:1.45rem;color:var(--accent);margin-bottom:1em}
+  .agent .tagline{font-family:var(--mono);font-weight:500;font-size:1.05rem;letter-spacing:.1em;color:var(--accent);margin-bottom:1.3em}
   .agent-contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 
   /* ---------- Seller pitch (audition for future clients) ---------- */
@@ -353,6 +444,77 @@
   .seller-cta .sctext{flex:1;min-width:260px}
   .seller-cta h3{font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:.2em}
   .seller-cta p{color:var(--paper-dim);font-size:1.04rem}
+
+  /* ---------- Media proof (sample work) ---------- */
+  .media-proof{
+    margin-top:clamp(32px,4.5vw,52px);padding-top:clamp(32px,4.5vw,48px);
+    border-top:1px solid var(--line);
+  }
+  /* Two players, different orientations, matched height */
+  .reel-row{
+    --reelH:clamp(240px,30vw,420px);
+    display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;
+  }
+  .reel{margin:0;display:flex;flex-direction:column;min-width:0}
+  .reel video,.reel iframe{
+    display:block;height:var(--reelH);width:auto;max-width:100%;
+    background:#000;border:1px solid var(--line);border-radius:4px;
+  }
+  .reel-h iframe{aspect-ratio:16/9}
+  .reel-h video{aspect-ratio:16/9}
+  .reel-v video{aspect-ratio:9/16}
+  .reel figcaption{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--paper-faint);margin-top:12px;
+  }
+  @media (max-width:760px){
+    .reel-row{--reelH:auto;flex-direction:column;gap:24px}
+    .reel{width:100%}
+    .reel-h iframe{width:100%;height:auto;aspect-ratio:16/9}
+    .reel-h video{width:100%;height:auto}
+    .reel-v video{width:100%;max-width:300px;height:auto;margin-inline:auto}
+  }
+
+  /* Sample photography */
+  .proof-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:12px;
+    margin-top:clamp(24px,3.5vw,36px);
+  }
+  .proof-grid .figure{aspect-ratio:3/2}
+  .proof-grid .figure:nth-child(1){grid-column:span 3}
+  .proof-grid .figure:nth-child(2){grid-column:span 3}
+  .proof-grid .figure:nth-child(3){grid-column:span 2}
+  .proof-grid .figure:nth-child(4){grid-column:span 2}
+  .proof-grid .figure:nth-child(5){grid-column:span 2}
+  .proof-grid .cap{font-size:.66rem;padding:22px 14px 12px}
+  @media (max-width:760px){
+    .proof-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .proof-grid .figure:nth-child(n){grid-column:span 1}
+    .proof-grid .figure:nth-child(5){grid-column:span 2;aspect-ratio:16/9}
+  }
+
+  /* ---------- Commercial band ---------- */
+  .commercial{
+    display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(26px,4vw,56px);align-items:center;
+    margin-top:clamp(32px,4.5vw,48px);padding-top:clamp(32px,4.5vw,48px);border-top:1px solid var(--line);
+  }
+  @media (max-width:820px){.commercial{grid-template-columns:1fr;gap:26px}}
+  .com-card{
+    display:flex;flex-direction:column;
+    border:1px solid var(--line);border-radius:4px;background:var(--ink-3);overflow:hidden;
+    transition:border-color .2s ease,transform .2s ease;
+  }
+  .com-img{display:block;aspect-ratio:16/9;overflow:hidden;background:var(--ink-2)}
+  .com-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .com-card:hover .com-img img{transform:scale(1.04)}
+  @media (prefers-reduced-motion:reduce){.com-card:hover .com-img img{transform:none}}
+  .com-body{display:flex;flex-direction:column;gap:.5em;padding:clamp(22px,2.6vw,28px)}
+  .com-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  @media (prefers-reduced-motion:reduce){.com-card:hover{transform:none}}
+  .com-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .com-title{font-family:var(--display);font-weight:500;font-size:1.55rem;line-height:1.15;margin-top:.4em}
+  .com-meta{font-size:1rem;color:var(--paper-dim)}
+  .com-url{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--paper-faint);margin-top:.6em}
 
   /* ---------- Contact ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px)}
@@ -376,7 +538,9 @@
   footer{background:var(--panel);border-top:1px solid var(--line);padding-block:clamp(48px,7vw,72px)}
   .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
   .foot-brand img{height:34px;width:auto;margin-bottom:16px}
-  .foot-brand .tag{font-family:var(--display);font-style:italic;color:var(--accent);font-size:1.15rem}
+  .foot-brand .tag{font-family:var(--mono);font-weight:500;letter-spacing:.1em;color:var(--accent);font-size:.95rem}
+  .foot-nav{display:flex;flex-direction:column;gap:10px;font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;color:var(--paper-dim)}
+  .foot-nav a:hover{color:var(--accent)}
   .foot-broker{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
   .foot-broker img{height:40px;width:auto;opacity:.85}
   .foot-broker .bmeta{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--paper-dim);line-height:1.9}
@@ -405,13 +569,14 @@
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
 <!-- ================= TOP BAR ================= -->
 <header class="topbar" id="topbar">
   <a class="topbar-brand" href="#top" aria-label="The Dock You've Been Waiting For — home">
-    <img src="assets/toddrocks-logo-white.png" alt="Todd Rocks">
+    <img src="assets/toddrocks-logo-white.png" alt="#toddrocks">
     <span class="tag">Freeport · Choctawhatchee Bay</span>
   </a>
   <a class="topbar-call" href="tel:+18507970627">
@@ -422,32 +587,50 @@
 
 <main id="top">
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO (headline + photo + facts) ================= -->
 <section class="hero" aria-label="Waterfront property introduction">
-  <div class="hero-media">
-    <img src="assets/hero-aerial-sunset.jpg" alt="Aerial view at sunset of the property on Choctawhatchee Bay, showing the brick home, level lawn, and long private dock reaching into open water" fetchpriority="high">
-  </div>
-  <div class="hero-scrim"></div>
-  <div class="hero-inner wrap">
+
+  <div class="hero-top wrap">
     <span class="eyebrow">The dock you've been waiting for</span>
     <h1>Live <em>on</em> the water.<br>Not just near it.</h1>
+    <p class="hero-sub">Roughly 130 feet of south-facing Choctawhatchee Bay — and a 120-foot dock to prove it.</p>
+  </div>
+
+  <figure class="hero-figure" id="hero-photo">
+    <a href="assets/aerial-sunrise-wide.jpg" target="_blank" rel="noopener">
+      <img src="assets/aerial-sunrise-wide.jpg" alt="Wide aerial view of the wooded shoreline and the open expanse of Choctawhatchee Bay in early morning light" fetchpriority="high">
+    </a>
+    <figcaption class="cap">Choctawhatchee Bay · the shoreline this property sits on</figcaption>
+  </figure>
+
+  <div class="hero-bottom wrap">
     <div class="hero-facts">
-      <div class="hf-address">4658 County Highway 83A&nbsp;W<span>Freeport, FL 32439</span></div>
-      <div class="hf-price">$1,000,000<span>Open to all reasonable offers</span></div>
+      <div class="hf-block">
+        <span class="hf-label">The property</span>
+        <span class="hf-address">4658 County Highway 83A&nbsp;W</span>
+        <span class="hf-city">Freeport, Florida 32439</span>
+      </div>
+      <div class="hf-block hf-priceblock">
+        <span class="hf-label">Offered at</span>
+        <span class="hf-price">$1,000,000</span>
+        <span class="hf-note">Open to all reasonable offers · Owner financing available</span>
+      </div>
     </div>
+
     <div class="hero-cta">
       <a class="btn btn-primary" href="tel:+18507970627">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Call or text Todd
       </a>
+      <a class="btn btn-ghost" href="comps.html">See the comps →</a>
       <a class="btn btn-ghost" href="https://www.flexmls.com/share/EHMI9/4658-W-County-Highway-83A-Freeport-FL-32439" target="_blank" rel="noopener">View full MLS listing ↗</a>
     </div>
 
     <div class="specstrip">
       <div class="spec"><div class="n">~130 ft</div><div class="l">Bay frontage</div></div>
-      <div class="spec"><div class="n">120 ft</div><div class="l">Dock · deepwater</div></div>
-      <div class="spec"><div class="n">0.9 ac</div><div class="l">Level lot · no HOA</div></div>
-      <div class="spec"><div class="n">Due South</div><div class="l">Sunrise &amp; sunset</div></div>
+      <div class="spec"><div class="n">120 ft</div><div class="l">Private dock</div></div>
+      <div class="spec"><div class="n">0.9 acres</div><div class="l">Level lot · no HOA</div></div>
+      <div class="spec"><div class="n">Due South</div><div class="l">Sun on the water all day</div></div>
     </div>
   </div>
 </section>
@@ -459,10 +642,43 @@
   </div>
 </section>
 
-<!-- ================= ESTABLISHING SHOT (full, uncropped) ================= -->
-<section class="fullshot reveal" aria-label="Aerial view of the property at sunset">
-  <img src="assets/hero-aerial-sunset.jpg" alt="Full aerial photograph at sunset: the level lawn and brick home on Choctawhatchee Bay, the private dock reaching into open water, and the sun setting across the bay">
-  <div class="fullshot-cap"><span>Sunset over Choctawhatchee Bay</span> · ~130 ft of south-facing frontage</div>
+<!-- ================= LIFE ON THE WATER ================= -->
+<section class="band band-2" aria-labelledby="life-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Life on the water</span>
+      <h2 class="display" id="life-h">Not staged. Just Tuesdays here.</h2>
+      <p class="body" style="margin-top:1.2em">These aren't listing photos — they're snapshots the current owners took from this dock. Redfish and speckled trout that never saw a boat, and the kind of evenings that show up for free. This is what the place actually is when no one's trying to sell it.</p>
+    </div>
+    <div class="life-grid reveal">
+      <figure class="figure">
+        <a href="assets/lifestyle-redfish.jpg" target="_blank" rel="noopener"><img src="assets/lifestyle-redfish.jpg" alt="A large redfish caught and held up on the dock, bay water and cloudy sky behind"></a>
+        <figcaption class="cap">Redfish, straight off the dock</figcaption>
+      </figure>
+      <figure class="figure">
+        <a href="assets/lifestyle-sunset.jpg" target="_blank" rel="noopener"><img src="assets/lifestyle-sunset.jpg" alt="Orange sunset over Choctawhatchee Bay seen from the property"></a>
+        <figcaption class="cap">Sunset over the bay</figcaption>
+      </figure>
+      <figure class="figure">
+        <a href="assets/lifestyle-trout.jpg" target="_blank" rel="noopener"><img src="assets/lifestyle-trout.jpg" alt="A speckled trout held up on the dock beside the sundeck stairs, bay in the background"></a>
+        <figcaption class="cap">Speckled trout, caught right here</figcaption>
+      </figure>
+      <figure class="figure">
+        <a href="assets/lifestyle-dusk.jpg" target="_blank" rel="noopener"><img src="assets/lifestyle-dusk.jpg" alt="Dusk light and clouds over the open water of the bay"></a>
+        <figcaption class="cap">Dusk across the water</figcaption>
+      </figure>
+      <figure class="figure">
+        <a href="assets/lifestyle-goldenhour.jpg" target="_blank" rel="noopener"><img src="assets/lifestyle-goldenhour.jpg" alt="Golden-hour light over the dock and bay"></a>
+        <figcaption class="cap">Golden hour, off the end of the dock</figcaption>
+      </figure>
+    </div>
+    </div>
+</section>
+
+<!-- ================= ESTABLISHING SHOT (full aerial, uncropped) ================= -->
+<section class="fullshot reveal" id="establishing" aria-label="Full aerial view of the property and dock">
+  <a href="assets/hero-aerial-sunset.jpg" target="_blank" rel="noopener"><img src="assets/hero-aerial-sunset.jpg" alt="Full aerial photograph of the property: the level lawn, brick home, and the private dock running out into Choctawhatchee Bay" loading="lazy"></a>
+  <div class="fullshot-cap"><span>The whole picture</span> · house, lawn, dock, and 130 feet of open bay</div>
 </section>
 
 <!-- ================= THE WATER ================= -->
@@ -474,43 +690,50 @@
         <h2 class="display" id="water-h">There are two kinds of waterfront. This is the kind you live on.</h2>
       </div>
       <div>
-        <p class="body">Roughly 130 feet of the property's southern edge is Choctawhatchee Bay — open, deep, facing due south. That orientation is the whole game: sun on the water from morning to evening, with both the sunrise and the sunset playing out across the bay instead of behind a neighbor's roofline.</p>
+        <p class="body">Roughly 130 feet of the property's southern edge is open Choctawhatchee Bay, facing due south. That orientation is the whole game: the sun tracks across the water all day long, so the view is lit from morning to evening rather than staring into a neighbor's roofline.</p>
       </div>
     </div>
 
     <div class="water-showpiece reveal">
       <figure class="figure">
-        <img src="assets/dock-to-sundeck.jpg" alt="The 120-foot private dock running straight out over open bay water to a covered sundeck platform">
-        <figcaption class="cap">120-ft dock · deepwater · sundeck at the end</figcaption>
+        <a href="assets/dock-to-sundeck.jpg" target="_blank" rel="noopener"><img src="assets/dock-to-sundeck.jpg" alt="The 120-foot private dock running straight out over open bay water to a covered sundeck platform"></a>
+        <figcaption class="cap">120-ft dock · boat lift · sundeck at the end</figcaption>
       </figure>
     </div>
 
     <div class="water-grid reveal">
       <figure class="figure">
-        <img src="assets/dock-boatlift-detail.jpg" alt="Dock detail showing the boat lift with a boat raised over the water and stairs up to the sundeck">
-        <figcaption class="cap">Boat lift over usable depth</figcaption>
+        <a href="assets/dock-boatlift-detail.jpg" target="_blank" rel="noopener"><img src="assets/dock-boatlift-detail.jpg" alt="Dock detail showing the boat lift with a boat raised over the water and stairs up to the sundeck"></a>
+        <figcaption class="cap">Boat lift, ready to run</figcaption>
       </figure>
       <figure class="figure">
-        <img src="assets/sundeck-view.jpg" alt="The open view across Choctawhatchee Bay from the dock's sundeck platform">
+        <a href="assets/sundeck-view.jpg" target="_blank" rel="noopener"><img src="assets/sundeck-view.jpg" alt="The open view across Choctawhatchee Bay from the dock's sundeck platform"></a>
         <figcaption class="cap">The view from the sundeck</figcaption>
       </figure>
       <figure class="figure">
-        <img src="assets/shoreline-chairs.jpg" alt="Adirondack chairs at the shoreline looking out over the dock and open water">
+        <a href="assets/shoreline-chairs.jpg" target="_blank" rel="noopener"><img src="assets/shoreline-chairs.jpg" alt="Adirondack chairs at the shoreline looking out over the dock and open water"></a>
         <figcaption class="cap">Where the day slows down</figcaption>
       </figure>
     </div>
 
     <div class="water-showpiece reveal">
       <figure class="figure">
-        <img src="assets/aerial-sunset-dock.jpg" alt="Aerial view at dusk of the dock and covered sundeck reaching into Choctawhatchee Bay, with the home and lawn behind">
+        <a href="assets/aerial-sunset-dock.jpg" target="_blank" rel="noopener"><img src="assets/aerial-sunset-dock.jpg" alt="Aerial view at dusk of the dock and covered sundeck reaching into Choctawhatchee Bay, with the home and lawn behind"></a>
         <figcaption class="cap">The dock and sundeck from above, at day's end</figcaption>
+      </figure>
+    </div>
+
+    <div class="water-showpiece reveal" style="margin-top:14px">
+      <figure class="figure">
+        <a href="assets/dock-from-water.jpg" target="_blank" rel="noopener"><img src="assets/dock-from-water.jpg" alt="The dock seen from out on the water, looking back toward the lawn and home"></a>
+        <figcaption class="cap">Looking back from the end of the dock</figcaption>
       </figure>
     </div>
 
     <div class="assets-list reveal">
       <div class="asset-row">
         <span class="k">01</span>
-        <div><h3>Deepwater, on your schedule</h3><p>The lift sits over water deep enough to actually use — no standing around waiting on the tide before you can go fishing.</p></div>
+        <div><h3>More than enough water for the boat</h3><p>The lift sits over water with more than enough depth for the boats it’s built to hold — no standing around waiting on the tide before you can go fishing.</p></div>
       </div>
       <div class="asset-row">
         <span class="k">02</span>
@@ -526,7 +749,7 @@
       </div>
       <div class="asset-row">
         <span class="k">05</span>
-        <div><h3>Sunrise and sunset, both on the water</h3><p>The due-south exposure means the sky puts on two shows a day — and the bay hands both of them back in reflection.</p></div>
+        <div><h3>Light on the water, all day</h3><p>A due-south exposure means the sun crosses the bay in front of you from morning to evening, and through the cooler months it slips toward the water at both ends of the day.</p></div>
       </div>
       <div class="asset-row">
         <span class="k">06</span>
@@ -544,6 +767,10 @@
         <span class="k">09</span>
         <div><h3>Freeport — and climbing</h3><p>One of the Emerald Coast's fastest-growing communities, minutes from 30A and the bay's best water — a location moving in the right direction.</p></div>
       </div>
+      <div class="asset-row">
+        <span class="k">10</span>
+        <div><h3>The upside is the part you control</h3><p>Waterfront is the fixed asset — nobody is making more of it, and the dock and seawall are already built and permitted. The house is the variable, which means every dollar you put into it lands on a lot that already carries the value. And with short term rentals allowed, it can earn while you improve it. <a href="comps.html" style="color:var(--accent);border-bottom:1px solid var(--accent-soft)">See how it prices against the comps →</a></p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -557,19 +784,23 @@
       <p class="body" style="margin-top:1.2em">A family room pointed directly at the bay, wrapped in massive windows on three sides. When the water is the reason you're here, the best room in the house is the one that never lets you forget it.</p>
     </div>
     <div class="view-split reveal">
-      <figure class="figure tall">
-        <img src="assets/interior-windowwall.jpg" alt="Interior family room with a wall of windows framing the lawn, dock, and open bay beyond">
-        <figcaption class="cap">Family room · walls of glass on three sides</figcaption>
+      <figure class="figure wide">
+        <a href="assets/interior-windowwall.jpg" target="_blank" rel="noopener">
+          <img src="assets/interior-windowwall.jpg" alt="Interior family room with a wall of windows framing the lawn, dock, and open bay beyond">
+          <figcaption class="cap">Family room · walls of glass on three sides</figcaption>
+        </a>
       </figure>
-      <figure class="figure tall">
-        <img src="assets/interior-bedroom-bayview.jpg" alt="Bedroom with a sliding glass door opening to the brick exterior, lawn, and bay view">
-        <figcaption class="cap">Wake up to the water</figcaption>
+      <figure class="figure wide">
+        <a href="assets/interior-bedroom-bayview.jpg" target="_blank" rel="noopener">
+          <img class="frame-right" src="assets/interior-bedroom-bayview.jpg" alt="Bedroom with a sliding glass door opening to the lawn and the bay beyond">
+          <figcaption class="cap">Wake up to the water</figcaption>
+        </a>
       </figure>
     </div>
     <div class="water-showpiece reveal" style="margin-top:14px">
       <figure class="figure">
-        <img src="assets/interior-familyroom.jpg" alt="Family room interior with recliners facing a wall of windows that look out over the lawn to the bay">
-        <figcaption class="cap">Every seat in the room points at the bay</figcaption>
+        <a href="assets/interior-familyroom.jpg" target="_blank" rel="noopener"><img src="assets/interior-familyroom.jpg" alt="Family room interior with windows on three sides looking out over the lawn to the bay"></a>
+        <figcaption class="cap">Water in view from just about anywhere in the room</figcaption>
       </figure>
     </div>
   </div>
@@ -582,54 +813,41 @@
       <div class="reveal">
         <span class="eyebrow gold">Owner financing available</span>
         <h2 class="display" id="fin-h" style="margin-top:1em">Skip the bank. <em>Deal directly.</em></h2>
-        <p class="body" style="margin-top:1.2em">The seller is open to owner financing — and that's worth slowing down for. Instead of accepting whatever rate the bank is feeling that week, the terms here can be worked out directly.</p>
+        <p class="body" style="margin-top:1.2em">The seller is open to owner financing. That means the structure of this purchase isn't dictated by whatever rate a bank is quoting this week — it gets worked out directly, between two people, on terms that fit the deal.</p>
         <div class="finance-points">
-          <div class="fp"><span class="num">01</span><span class="txt"><strong>Price, rate, down payment, and timeline</strong> — all negotiable, subject to the seller's approval.</span></div>
+          <div class="fp"><span class="num">01</span><span class="txt"><strong>Favorable terms are on the table</strong> — the seller will consider any serious offer backed by considerable cash, subject to approval.</span></div>
           <div class="fp"><span class="num">02</span><span class="txt">For the right buyer: <strong>a faster close, fewer hoops,</strong> and a monthly number that actually pencils out.</span></div>
-          <div class="fp"><span class="num">03</span><span class="txt"><strong>Short-term rentals are permitted</strong> — a genuine income-producing property, not just a lovely place to stand.</span></div>
+          <div class="fp"><span class="num">03</span><span class="txt"><strong>Short term rentals are allowed</strong> — a genuine income-producing property, not just a lovely place to stand.</span></div>
         </div>
       </div>
       <div class="finance-card reveal">
         <span class="eyebrow gold">Let's talk terms</span>
-        <div class="big">$1,000,000<span class="sub">Offered at one million — seller open to all reasonable offers. Financing structured directly with the seller.</span></div>
+        <div class="big">$1,000,000<span class="sub">Offered at one million — seller open to all reasonable offers, and to favorable terms for a serious buyer with considerable cash.</span></div>
         <a class="btn btn-gold" href="tel:+18507970627">Call Todd about terms</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= LIFE ON THE WATER (seller photos) ================= -->
-<section class="band band-2" aria-labelledby="life-h">
+<!-- ================= PRICING EVIDENCE → COMPS PAGE ================= -->
+<section class="band" aria-labelledby="comps-teaser-h">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Life on the water</span>
-      <h2 class="display" id="life-h">Not staged. Just Tuesdays here.</h2>
-      <p class="body" style="margin-top:1.2em">These aren't listing photos — they're snapshots the current owners took from this dock. Redfish and speckled trout that never saw a boat, and the kind of evenings that show up for free. This is what the place actually is when no one's trying to sell it.</p>
-    </div>
-    <div class="life-grid reveal">
-      <figure class="figure">
-        <img src="assets/lifestyle-redfish.jpg" alt="A large redfish caught and held up on the dock, bay water and cloudy sky behind">
-        <figcaption class="cap">Redfish, straight off the dock</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="assets/lifestyle-sunset.jpg" alt="Orange sunset over Choctawhatchee Bay seen from the property">
-        <figcaption class="cap">Sunset over the bay</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="assets/lifestyle-trout.jpg" alt="A speckled trout held up on the dock beside the sundeck stairs, bay in the background">
-        <figcaption class="cap">Speckled trout, caught right here</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="assets/lifestyle-dusk.jpg" alt="Dusk light and clouds over the open water of the bay">
-        <figcaption class="cap">Dusk across the water</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="assets/lifestyle-goldenhour.jpg" alt="Golden-hour light over the dock and bay">
-        <figcaption class="cap">Golden hour, off the end of the dock</figcaption>
-      </figure>
+    <div class="comps-teaser reveal">
+      <div class="ct-text">
+        <span class="eyebrow">Is it priced right?</span>
+        <h2 class="display" id="comps-teaser-h" style="margin-top:.9em">Every comparable sale says yes.</h2>
+        <p class="body" style="margin-top:1.1em">Five waterfront sales in Freeport over the last twelve months, adjusted side by side. The data supports $1,050,000 to $1,125,000. It's offered at $1,000,000 — and it carries the lowest price per waterfront foot of any comparable property with a private dock and lift.</p>
+        <a class="btn btn-primary" href="comps.html" style="margin-top:26px">See the full comp analysis →</a>
+      </div>
+      <div class="ct-stats">
+        <div class="cts"><span class="n">$7,692</span><span class="l">Per waterfront foot</span></div>
+        <div class="cts"><span class="n">$441</span><span class="l">Per sqft · comps avg $519</span></div>
+        <div class="cts"><span class="n">4 of 5</span><span class="l">Comps indicate higher</span></div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- ================= LAND & HOUSE ================= -->
 <section class="band" id="property" aria-labelledby="land-h">
@@ -640,7 +858,7 @@
     </div>
 
     <figure class="lot-hero reveal" style="margin-top:clamp(28px,5vw,48px)">
-      <img src="assets/lot-wide-oaks.jpg" alt="Wide view of the level 0.9-acre lot under mature oaks, with the brick ranch home and detached garage">
+      <a href="assets/lot-wide-oaks.jpg" target="_blank" rel="noopener"><img src="assets/lot-wide-oaks.jpg" alt="Wide view of the level 0.9-acre lot under mature oaks, with the brick ranch home and detached garage"></a>
     </figure>
 
     <div class="house-layout">
@@ -649,11 +867,11 @@
         <p class="body">For everything that refuses to live indoors — boats, kayaks, and the water toys that multiply once you live somewhere like this — there's a carport, a detached 2-car garage, and a separate storage building and workshop.</p>
         <div class="outbuildings">
           <figure class="figure">
-            <img src="assets/garage-detached.jpg" alt="Detached two-car garage with a boat parked inside">
+            <a href="assets/garage-detached.jpg" target="_blank" rel="noopener"><img src="assets/garage-detached.jpg" alt="Detached two-car garage with a boat parked inside"></a>
             <figcaption class="cap">Detached 2-car garage</figcaption>
           </figure>
           <figure class="figure">
-            <img src="assets/workshop-storage.jpg" alt="Separate storage building and workshop on the property">
+            <a href="assets/workshop-storage.jpg" target="_blank" rel="noopener"><img src="assets/workshop-storage.jpg" alt="Separate storage building and workshop on the property"></a>
             <figcaption class="cap">Workshop &amp; storage</figcaption>
           </figure>
         </div>
@@ -671,27 +889,154 @@
           <div class="sr"><span class="sk">Storm</span><span class="sv">Hurricane shutters</span></div>
           <div class="sr"><span class="sk">Security</span><span class="sv">Exterior camera system</span></div>
           <div class="sr"><span class="sk">Internet</span><span class="sv">Cox (fiber coming)</span></div>
-          <div class="sr"><span class="sk">Use</span><span class="sv">Residential · short-term rentals OK</span></div>
+          <div class="sr"><span class="sk">Use</span><span class="sv">Residential · short term rentals allowed</span></div>
         </div>
       </div>
     </div>
 
     <figure class="lot-hero reveal" style="margin-top:clamp(24px,4vw,40px)">
-      <img src="assets/aerial-topdown-lot.jpg" alt="Straight-down aerial of the entire parcel: road frontage, home, detached garage and workshop, level yard, and the dock running out into the bay">
+      <a href="assets/aerial-topdown-lot.jpg" target="_blank" rel="noopener"><img src="assets/aerial-topdown-lot.jpg" alt="Straight-down aerial of the entire parcel: road frontage, home, detached garage and workshop, level yard, and the dock running out into the bay"></a>
       <figcaption class="cap" style="position:absolute;left:0;right:0;bottom:0">The whole parcel from above · road to water, ~0.9 acre</figcaption>
     </figure>
+
+    <div class="costs reveal">
+      <div class="costs-head">
+        <span class="eyebrow">What it costs to own</span>
+        <h3 class="display" style="margin-top:.8em">The annual numbers, up front.</h3>
+        <p class="body" style="margin-top:1em">Waterfront carries insurance. Rather than let you find that out later, here it is now — alongside the tax and HOA lines that quietly favor this property.</p>
+      </div>
+      <div class="costs-table">
+        <div class="cr"><span class="ck">Homeowners insurance</span><span class="cv">~$4,800 / yr</span></div>
+        <div class="cr"><span class="ck">Flood insurance</span><span class="cv">~$3,000 / yr</span></div>
+        <div class="cr"><span class="ck">Property taxes (2025)</span><span class="cv">$800.90</span></div>
+        <div class="cr"><span class="ck">HOA dues</span><span class="cv">None</span></div>
+        <div class="cr"><span class="ck">Special assessments</span><span class="cv">None</span></div>
+        <p class="costs-note">Insurance figures are current-policy estimates and will vary by carrier, coverage and deductible. Property taxes reflect the current owner's assessment and will be reassessed on sale. Comparable properties in nearby subdivisions carry annual assessments plus tax bills several times higher.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ================= SETTING ================= -->
-<section class="band band-2 setting" aria-labelledby="set-h" style="padding-block:clamp(56px,7vw,88px)">
+<!-- ================= CLOSING QUOTE ================= -->
+<section class="band manifesto" aria-label="Life in Freeport">
   <div class="wrap reveal">
-    <span class="eyebrow">Freeport · Emerald Coast</span>
-    <p class="lead" style="margin-top:1.2em">Peace and quiet come standard here. The only real risk is <em>forgetting what day it is.</em></p>
-    <div class="setting-stats">
-      <div class="ss"><div class="n">No HOA</div><div class="l">No letters about your mailbox</div></div>
-      <div class="ss"><div class="n">STR-legal</div><div class="l">Income-producing</div></div>
-      <div class="ss"><div class="n">Due South</div><div class="l">Sunrise &amp; sunset on the water</div></div>
+    <p class="manifesto-quote">Peace and quiet come standard here. The only real risk is <em>forgetting what day it is.</em></p>
+  </div>
+</section>
+
+<!-- ================= A NOTE FOR HOMEOWNERS ================= -->
+<section class="band seller" aria-labelledby="sell-h">
+  <div class="wrap">
+    <div class="seller-head reveal">
+      <span class="eyebrow">A note for homeowners</span>
+      <h2 class="display" id="sell-h" style="margin-top:1em">A sign in the yard is not a marketing plan.</h2>
+      <p class="body" style="margin-top:1.2em">If you own a home and you've been reading this wondering what your own listing might look like — that's exactly the right question. The custom site, the domain, the photography, the objective pricing data: none of it is reserved for waterfront. It's the standard.</p>
+      <p class="body" style="margin-top:1.1em">Your property doesn't just sit on a website waiting to be found. Advanced digital campaigns using geofencing, retargeting and behavioral tracking put it in front of qualified buyers in real time. Someone looks at a home in your neighborhood, the ads find them. Someone looks at your home, and your home follows them across the apps and sites they use next. Every prospect who shows interest and then goes quiet gets direct, personal follow-up, and targeted call campaigns make sure no lead goes unpursued.</p>
+    </div>
+
+    <div class="seller-grid reveal">
+      <div class="scard">
+        <span class="sn">01</span>
+        <h3>A property, its own website</h3>
+        <p>A dedicated domain and custom landing page built around one home's strengths — not a listing lost on page nine of a portal.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">02</span>
+        <h3>Media that sells</h3>
+        <p>Professional stills, drone aerials, interactive floor plans, and video built for the way people actually watch.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">03</span>
+        <h3>Ads that follow the buyer</h3>
+        <p>Geofencing, retargeting and behavioral tracking. Someone views a home in your neighborhood, the ads find them — then your home follows them across the sites they use next.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">04</span>
+        <h3>Data, not guesswork</h3>
+        <p>Objective pricing evidence published alongside the listing — like <a href="comps.html" style="color:var(--accent)">the comp analysis</a> built for this property. Buyers see the math.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">05</span>
+        <h3>One point of contact</h3>
+        <p>You work with Todd — not a rotating cast. The strategist and the marketer are the same person, and he answers the phone.</p>
+      </div>
+      <div class="scard">
+        <span class="sn">06</span>
+        <h3>No lock-in, no inflated fees</h3>
+        <p>No long-term contracts and no bloated commission — plus creative structuring, like owner financing and rental positioning, that widens your buyer pool.</p>
+      </div>
+    </div>
+
+    <div class="media-proof reveal">
+      <div class="sec-head" style="margin-bottom:clamp(24px,3.5vw,36px)">
+        <span class="eyebrow">The media, from other listings</span>
+        <h3 class="display" style="margin-top:.9em;font-size:clamp(1.6rem,3.2vw,2.2rem)">This is what your property would look like.</h3>
+        <p class="body" style="margin-top:1em">A full walkthrough and a vertical reel built for social, plus a sample of the photography — drone, twilight, interiors, and the shot that actually sells the place. Tap any video to play, or expand it full screen.</p>
+      </div>
+
+      <div class="reel-row">
+        <figure class="reel reel-h">
+          <iframe src="https://www.youtube.com/embed/ucqgjQ1F5rg?si=9EAZ__IGGPvAfm9R" title="Full property tour — 319 Ellis Rd" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <figcaption>Full property tour · 319 Ellis Rd</figcaption>
+        </figure>
+        <figure class="reel reel-v">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/319%20Ellis%20Rd%2030%20second%20vertical.mp4" type="video/mp4">
+            Your browser doesn't support embedded video. <a href="assets/319%20Ellis%20Rd%2030%20second%20vertical.mp4">Download the reel</a>.
+          </video>
+          <figcaption>30-second vertical reel</figcaption>
+        </figure>
+      </div>
+
+      <div class="proof-grid">
+        <figure class="figure">
+          <a href="assets/media-dock-swing.jpg" target="_blank" rel="noopener"><img src="assets/media-dock-swing.jpg" alt="Covered dock with a porch swing looking out over sunlit water" loading="lazy"></a>
+          <figcaption class="cap">Waterfront · golden hour</figcaption>
+        </figure>
+        <figure class="figure">
+          <a href="assets/media-pool-sunset.jpg" target="_blank" rel="noopener"><img src="assets/media-pool-sunset.jpg" alt="Backyard pool reflecting a pink and orange sunset sky" loading="lazy"></a>
+          <figcaption class="cap">Twilight exteriors</figcaption>
+        </figure>
+        <figure class="figure">
+          <a href="assets/media-aerial-beachfront.jpg" target="_blank" rel="noopener"><img src="assets/media-aerial-beachfront.jpg" alt="Drone photograph of a Gulf-front neighborhood with the subject home marked by a pin" loading="lazy"></a>
+          <figcaption class="cap">Drone with location marker</figcaption>
+        </figure>
+        <figure class="figure">
+          <a href="assets/media-interior-kitchen.jpg" target="_blank" rel="noopener"><img src="assets/media-interior-kitchen.jpg" alt="Bright open-plan kitchen and dining room interior" loading="lazy"></a>
+          <figcaption class="cap">Interiors, properly lit</figcaption>
+        </figure>
+        <figure class="figure">
+          <a href="assets/media-ellis-twilight.jpg" target="_blank" rel="noopener"><img src="assets/media-ellis-twilight.jpg" alt="Two-story coastal home at dusk with a lit pool in the foreground" loading="lazy"></a>
+          <figcaption class="cap">Dusk, lights on</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="commercial reveal">
+      <div class="com-text">
+        <span class="eyebrow">Commercial, too</span>
+        <h3 class="display" style="margin-top:.8em">The same standard, scaled up.</h3>
+        <p class="body" style="margin-top:1em">This isn't only a residential practice. Todd represents commercial property with the same custom-site, data-forward approach — investor and owner-user audiences, tenancy and income analysis, and the pricing evidence to back it. See a live example: a 10,000 SF medical office building in Crestview.</p>
+      </div>
+      <a class="com-card" href="https://www.577brookmeade.com" target="_blank" rel="noopener">
+        <span class="com-img">
+          <img src="assets/commercial-brookmeade-aerial.jpg" alt="Aerial view of 577 Brookmeade Drive medical office building and the surrounding Crestview commercial corridor" loading="lazy">
+        </span>
+        <span class="com-body">
+          <span class="com-eyebrow">Case study ↗</span>
+          <span class="com-title">577 Brookmeade Drive</span>
+          <span class="com-meta">10,000 SF medical office · Crestview, FL</span>
+          <span class="com-url">577brookmeade.com</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="seller-cta reveal">
+      <div class="sctext">
+        <h3>Curious what that looks like for your home?</h3>
+        <p>No pressure and no obligation — just a straight conversation about your property and what it could do on the market.</p>
+      </div>
+      <a class="btn btn-primary" href="tel:+18507970627">Call Todd · 850-797-0627</a>
     </div>
   </div>
 </section>
@@ -708,9 +1053,10 @@
         <span class="eyebrow">Listed &amp; marketed by</span>
         <h2 class="display" id="todd-h" style="margin-top:.6em">Todd Siegrist</h2>
         <div class="role">Real Estate Strategist</div>
-        <p class="tagline">Todd Rocks.</p>
-        <p class="body">For more than 20 years, Todd has helped people buy and sell across the Emerald Coast — Destin, Miramar Beach, Santa Rosa Beach, Freeport, Crestview, and everywhere between. What sets his listings apart isn't a bigger sign; it's a sharper plan. Over 65 five-star reviews and hundreds of clients later, the reputation is consistent: proactive marketing, straight answers, and a knack for the deals other agents walk away from.</p>
-        <p class="body" style="margin-top:1.1em">This listing is his, start to finish — the strategy, the media, and the person who answers when you call. Every property gets a plan built around what actually makes it worth buying. For this one, that means the water leads and the conversation stays direct.</p>
+        <p class="tagline">#toddrocks</p>
+        <p class="body">Todd has spent two decades on the Emerald Coast and built his practice around a simple objection: most sellers pay a large commission for little more than a sign in the yard and an MLS entry. He works the opposite way — no long-term contracts, no inflated fees, and marketing driven by data rather than guesswork.</p>
+        <p class="body" style="margin-top:1.1em">Over 65 five-star reviews later, the feedback is consistent: absolute transparency, communication at any hour, and an advisor who treats real estate like a discipline instead of a coin flip. He lives and works on this coast, and he answers his own phone.</p>
+        <p class="body" style="margin-top:1.1em">This listing is his, start to finish — the strategy, the media, and the person on the other end of the call. Let's rock.</p>
         <div class="agent-contact">
           <a class="btn btn-primary" href="tel:+18507970627">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -723,57 +1069,6 @@
   </div>
 </section>
 
-<!-- ================= SELLER PITCH ================= -->
-<section class="band seller" aria-labelledby="sell-h">
-  <div class="wrap">
-    <div class="seller-head reveal">
-      <span class="eyebrow">A note for homeowners</span>
-      <h2 class="display" id="sell-h" style="margin-top:1em">Everything you just scrolled through is the marketing.</h2>
-      <p class="body" style="margin-top:1.2em">If you own a home and you've been reading this wondering what your own listing might look like — that's exactly the right question. The custom site, the domain, the photography, the way the story is built around what actually makes this place worth buying: none of it is reserved for waterfront. It's how every home Todd represents gets presented. Here's what goes into it.</p>
-    </div>
-
-    <div class="seller-grid reveal">
-      <div class="scard">
-        <span class="sn">01</span>
-        <h3>A property, its own website</h3>
-        <p>A dedicated domain and custom landing page built around one home's strengths — not a listing lost on page nine of a portal.</p>
-      </div>
-      <div class="scard">
-        <span class="sn">02</span>
-        <h3>Media that sells</h3>
-        <p>Professional stills, drone aerials, a full walkthrough, and a vertical highlight reel — the media buyers actually stop to watch.</p>
-      </div>
-      <div class="scard">
-        <span class="sn">03</span>
-        <h3>Reach where buyers are</h3>
-        <p>Roadside signage with scannable QR, social-native video, and search-ready pages that turn a drive-by into a phone call.</p>
-      </div>
-      <div class="scard">
-        <span class="sn">04</span>
-        <h3>Strategy over guesswork</h3>
-        <p>Every listing gets a plan: what leads, what's honest, what closes. The dock leads here because the dock is the story.</p>
-      </div>
-      <div class="scard">
-        <span class="sn">05</span>
-        <h3>One point of contact</h3>
-        <p>You work with Todd — not a rotating cast. The strategist and the marketer are the same person, and he answers the phone.</p>
-      </div>
-      <div class="scard">
-        <span class="sn">06</span>
-        <h3>Terms, handled</h3>
-        <p>Owner financing, short-term-rental positioning, income framing — the creative structuring that widens your buyer pool.</p>
-      </div>
-    </div>
-
-    <div class="seller-cta reveal">
-      <div class="sctext">
-        <h3>Curious what that looks like for your home?</h3>
-        <p>No pressure and no obligation — just a straight conversation about your property and what it could do on the market.</p>
-      </div>
-      <a class="btn btn-primary" href="tel:+18507970627">Call Todd · 850-797-0627</a>
-    </div>
-  </div>
-</section>
 
 <!-- ================= CONTACT ================= -->
 <section class="band band-2" id="contact" aria-labelledby="contact-h">
@@ -831,9 +1126,15 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="assets/toddrocks-logo-white.png" alt="Todd Rocks">
-        <div class="tag">Todd Rocks.</div>
+        <img src="assets/toddrocks-logo-white.png" alt="#toddrocks">
+        <div class="tag">#toddrocks</div>
       </div>
+      <nav class="foot-nav" aria-label="Site">
+        <a href="index.html">The property</a>
+        <a href="comps.html">The case for the price</a>
+        <a href="https://www.flexmls.com/share/EHMI9/4658-W-County-Highway-83A-Freeport-FL-32439" target="_blank" rel="noopener">MLS listing ↗</a>
+        <a href="tel:+18507970627">850-797-0627</a>
+      </nav>
       <div class="foot-broker">
         <img src="assets/daltonwade-logo-white.png" alt="Dalton Wade Real Estate Group">
         <div class="bmeta">
@@ -862,16 +1163,28 @@
 </nav>
 
 <script>
-  // Top bar solidifies after hero
-  const topbar=document.getElementById('topbar');
-  const onScroll=()=>{topbar.classList.toggle('solid',window.scrollY>window.innerHeight*0.7)};
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-
-  // Scroll reveal
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Reveal-on-scroll. Deliberately simple and failsafe: anything that has reached
+  // the trigger line (or scrolled past it) is revealed and never re-hidden.
+  (function(){
+    var items = [].slice.call(document.querySelectorAll('.reveal'));
+    if(!items.length) return;
+    var ticking = false;
+    function sweep(){
+      ticking = false;
+      for(var i=items.length-1;i>=0;i--){
+        var el=items[i];
+        if(el.getBoundingClientRect().top < window.innerHeight - 40){
+          el.classList.add('in');
+          items.splice(i,1);
+        }
+      }
+    }
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(sweep); } }
+    sweep();
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', sweep);
+  })();
 </script>
 
 </body>
